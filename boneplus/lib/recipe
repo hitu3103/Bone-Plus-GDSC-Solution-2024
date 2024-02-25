@@ -1,0 +1,272 @@
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+
+import 'recpie_model.dart';
+export 'recpie_model.dart';
+
+class RecpieWidget extends StatefulWidget {
+  const RecpieWidget({super.key});
+
+  @override
+  State<RecpieWidget> createState() => _RecpieWidgetState();
+}
+
+class _RecpieWidgetState extends State<RecpieWidget> {
+  late RecpieModel _model;
+
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    super.initState();
+    _model = createModel(context, () => RecpieModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+  }
+
+  @override
+  void dispose() {
+    _model.dispose();
+
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () => _model.unfocusNode.canRequestFocus
+          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+          : FocusScope.of(context).unfocus(),
+      child: Scaffold(
+        key: scaffoldKey,
+        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        appBar: AppBar(
+          backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+          automaticallyImplyLeading: false,
+          title: Text(
+            'Recipe Book',
+            style: FlutterFlowTheme.of(context).titleMedium,
+          ),
+          actions: [],
+          centerTitle: false,
+          elevation: 0,
+        ),
+        body: SafeArea(
+          top: true,
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(16, 16, 0, 16),
+                  child: Text(
+                    'Recipe Details',
+                    style: FlutterFlowTheme.of(context).headlineMedium.override(
+                          fontFamily: 'Sora',
+                          color: Color(0xFF00736D),
+                        ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                  child: Text(
+                    '1. Creamy White Bean & Kale Soup',
+                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                          fontFamily: 'Inter',
+                          fontSize: 19,
+                          fontWeight: FontWeight.w600,
+                        ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8),
+                    child: Image.asset(
+                      'assets/images/White-Bean-Soup-w.jpg',
+                      width: double.infinity,
+                      height: 240,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(16, 16, 0, 16),
+                  child: Text(
+                    'Ingredients',
+                    style: FlutterFlowTheme.of(context).titleMedium.override(
+                          fontFamily: 'Inter',
+                          color: FlutterFlowTheme.of(context).primaryText,
+                        ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(10, 16, 10, 16),
+                  child: Text(
+                    '1 tablespoon olive oil\n1 onion, chopped,  2 carrots, chopped\n2 celery stalks, chopped ,2 cloves garlic, minced, 1 teaspoon dried thyme, 1/2 teaspoon red pepper flakes (optional) ,4 cups vegetable broth\n1 (15-ounce) can cannellini beans, drained and rinsed, 1 (15-ounce) can white kidney beans, drained and rinsed, 5 cups kale, roughly chopped, 1/2 cup unsweetened almond milk, Salt and pepper to taste',
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          fontFamily: 'Inter',
+                          color: FlutterFlowTheme.of(context).primaryText,
+                        ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(16, 16, 0, 16),
+                  child: Text(
+                    'Instructions',
+                    style: FlutterFlowTheme.of(context).titleMedium.override(
+                          fontFamily: 'Inter',
+                          color: FlutterFlowTheme.of(context).primaryText,
+                        ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
+                  child: Text(
+                    'Heat olive oil in a large pot or Dutch oven over medium heat. Add onion, carrots, and celery and cook until softened, about 5 minutes.\nAdd garlic, thyme, and red pepper flakes (if using) and cook for another minute.\nPour in vegetable broth, beans, and kale. Bring to a boil, then reduce heat and simmer for 15 minutes, or until kale is wilted and tender.\nStir in almond milk and season with salt and pepper to taste. Serve hot with crusty bread for dipping.',
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          fontFamily: 'Inter',
+                          color: FlutterFlowTheme.of(context).primaryText,
+                        ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                  child: Text(
+                    '2. Tofu Scramble with Spinach and Mushrooms',
+                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                          fontFamily: 'Inter',
+                          fontSize: 19,
+                          fontWeight: FontWeight.w600,
+                        ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8),
+                    child: Image.asset(
+                      'assets/images/mushroom-spinach-tofu-wrap.jpg',
+                      width: double.infinity,
+                      height: 240,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(16, 16, 0, 16),
+                  child: Text(
+                    'Ingredients',
+                    style: FlutterFlowTheme.of(context).titleMedium.override(
+                          fontFamily: 'Inter',
+                          color: FlutterFlowTheme.of(context).primaryText,
+                        ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
+                  child: Text(
+                    '14-ounce block firm tofu, drained and crumbled\n1 tablespoon olive oil\n1/2 onion, chopped\n1 clove garlic, minced\n8 ounces mushrooms, sliced\n4 cups baby spinach\n1/4 cup nutritional yeast\n1/4 teaspoon turmeric\nSalt and pepper to taste',
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          fontFamily: 'Inter',
+                          color: FlutterFlowTheme.of(context).primaryText,
+                        ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(16, 16, 0, 16),
+                  child: Text(
+                    'Instructions',
+                    style: FlutterFlowTheme.of(context).titleMedium.override(
+                          fontFamily: 'Inter',
+                          color: FlutterFlowTheme.of(context).primaryText,
+                        ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
+                  child: Text(
+                    'Heat olive oil in a large skillet over medium heat. Add onion and garlic and cook until softened, about 5 minutes.\nAdd mushrooms and cook until golden brown, about 5 minutes more.\nStir in crumbled tofu and cook for another 5 minutes, breaking it up with a spatula.\nAdd spinach, nutritional yeast, turmeric, salt, and pepper. Cook until spinach is wilted, about 2 minutes.\nServe hot with toast, avocado slices, or your favorite toppings.\n3. Black Bean & Corn Burgers: These vegetarian burgers are packed with calcium from black beans and corn, and they\'re also a good source of protein and fiber. They\'re perfect for grilling or pan-frying.\n\n',
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          fontFamily: 'Inter',
+                          color: FlutterFlowTheme.of(context).primaryText,
+                        ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                  child: Text(
+                    '3. Classic Banana Milkshake',
+                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                          fontFamily: 'Inter',
+                          fontSize: 19,
+                          fontWeight: FontWeight.w600,
+                        ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(80, 16, 0, 16),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8),
+                    child: Image.asset(
+                      'assets/images/Banan-Milkshake-2.1200px-1-of-1.jpg',
+                      width: 170,
+                      height: 240,
+                      fit: BoxFit.cover,
+                      alignment: Alignment(1, 0),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(16, 16, 0, 16),
+                  child: Text(
+                    'Ingredients',
+                    style: FlutterFlowTheme.of(context).titleMedium.override(
+                          fontFamily: 'Inter',
+                          color: FlutterFlowTheme.of(context).primaryText,
+                        ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
+                  child: Text(
+                    '1 ripe banana, peeled and frozen\n1 cup milk (dairy or non-dairy)\n1/2 cup plain yogurt (Greek yogurt for extra calcium)\n1 tablespoon honey or maple syrup (optional)\n1/2 teaspoon vanilla extract (optional)\nPinch of ground cinnamon (optional)\nWhipped cream and maraschino cherry for garnish (optional)',
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          fontFamily: 'Inter',
+                          color: FlutterFlowTheme.of(context).primaryText,
+                        ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(16, 16, 0, 16),
+                  child: Text(
+                    'Instructions',
+                    style: FlutterFlowTheme.of(context).titleMedium.override(
+                          fontFamily: 'Inter',
+                          color: FlutterFlowTheme.of(context).primaryText,
+                        ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
+                  child: Text(
+                    'Blend all ingredients except the garnish in a blender until smooth and creamy.\nPour into a glass and garnish with whipped cream and a maraschino cherry, if desired.',
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          fontFamily: 'Inter',
+                          color: FlutterFlowTheme.of(context).primaryText,
+                        ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

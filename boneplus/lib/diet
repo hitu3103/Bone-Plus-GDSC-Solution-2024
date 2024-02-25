@@ -1,0 +1,270 @@
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+
+import 'diet_model.dart';
+export 'diet_model.dart';
+
+class DietWidget extends StatefulWidget {
+  const DietWidget({super.key});
+
+  @override
+  State<DietWidget> createState() => _DietWidgetState();
+}
+
+class _DietWidgetState extends State<DietWidget> {
+  late DietModel _model;
+
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    super.initState();
+    _model = createModel(context, () => DietModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+  }
+
+  @override
+  void dispose() {
+    _model.dispose();
+
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () => _model.unfocusNode.canRequestFocus
+          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+          : FocusScope.of(context).unfocus(),
+      child: Scaffold(
+        key: scaffoldKey,
+        backgroundColor: Color(0xFFFBF9F5),
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          automaticallyImplyLeading: false,
+          title: Text(
+            'Bone Health',
+            style: FlutterFlowTheme.of(context).headlineLarge.override(
+                  fontFamily: 'Sora',
+                  color: Color(0xFF00736D),
+                  fontWeight: FontWeight.w500,
+                ),
+          ),
+          actions: [],
+          centerTitle: false,
+          elevation: 0,
+        ),
+        body: SafeArea(
+          top: true,
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(16, 16, 8, 16),
+                  child: Text(
+                    'Nutrition for Bone Health',
+                    style: FlutterFlowTheme.of(context).headlineMedium.override(
+                          fontFamily: 'Readex Pro',
+                          color: Color(0xFF101518),
+                          fontSize: 28,
+                          fontWeight: FontWeight.normal,
+                        ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(10, 16, 10, 16),
+                  child: Text(
+                    'A well-planned vegetarian diet can meet nutritional needs for good bone health. It is important to focus on consuming enough calcium and vitamin D through vegetables, fruits, and fortified foods.',
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          fontFamily: 'Inter',
+                          color: Color(0xFF57636C),
+                          fontSize: 14,
+                          fontWeight: FontWeight.normal,
+                        ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(90),
+                        child: Image.asset(
+                          'assets/images/veggeee.jpg',
+                          width: 180,
+                          height: 180,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(90),
+                        child: Image.asset(
+                          'assets/images/milk.jpg',
+                          width: 180,
+                          height: 180,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(16, 16, 8, 16),
+                  child: Text(
+                    'Calcium-Rich Foods',
+                    style: FlutterFlowTheme.of(context).titleMedium.override(
+                          fontFamily: 'Inter',
+                          color: Color(0xFF101518),
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                        ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(10, 16, 10, 16),
+                  child: Text(
+                    'Include a variety of calcium-rich foods like broccoli, collard greens, and almonds. Fortified plant milks and juices are also good options.',
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          fontFamily: 'Inter',
+                          color: Color(0xFF57636C),
+                          fontSize: 14,
+                          fontWeight: FontWeight.normal,
+                        ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(16, 16, 8, 16),
+                  child: Text(
+                    'Vitamin D Sources',
+                    style: FlutterFlowTheme.of(context).titleMedium.override(
+                          fontFamily: 'Inter',
+                          color: Color(0xFF101518),
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                        ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(10, 16, 10, 16),
+                  child: Text(
+                    'Vitamin D is crucial for calcium absorption. Sources include sunlight, fortified foods, and supplements if necessary.',
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          fontFamily: 'Inter',
+                          color: FlutterFlowTheme.of(context).primaryText,
+                          fontSize: 14,
+                          fontWeight: FontWeight.normal,
+                        ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(16, 16, 8, 16),
+                  child: Text(
+                    'Protein Intake',
+                    style: FlutterFlowTheme.of(context).titleMedium.override(
+                          fontFamily: 'Inter',
+                          color: Color(0xFF101518),
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                        ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(10, 16, 10, 16),
+                  child: Text(
+                    'Adequate protein intake is also essential for bone health. Legumes, nuts, and seeds are excellent protein sources for vegetarians.',
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          fontFamily: 'Inter',
+                          color: FlutterFlowTheme.of(context).primaryText,
+                          fontSize: 14,
+                          fontWeight: FontWeight.normal,
+                        ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(16, 16, 8, 16),
+                  child: Text(
+                    'Additional Nutrients',
+                    style: FlutterFlowTheme.of(context).titleMedium.override(
+                          fontFamily: 'Inter',
+                          color: Color(0xFF101518),
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                        ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(10, 16, 10, 16),
+                  child: Text(
+                    'Other nutrients that support bone health include magnesium, potassium, and vitamins K and C. Ensure your diet includes a variety of whole foods to get these nutrients.',
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          fontFamily: 'Inter',
+                          color: FlutterFlowTheme.of(context).primaryText,
+                          fontSize: 14,
+                          fontWeight: FontWeight.normal,
+                        ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(16, 16, 8, 16),
+                  child: Text(
+                    'Stay Active',
+                    style: FlutterFlowTheme.of(context).titleMedium.override(
+                          fontFamily: 'Inter',
+                          color: Color(0xFF101518),
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                        ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(10, 16, 10, 16),
+                  child: Text(
+                    'Regular exercise, especially weight-bearing activities like walking and yoga, can help maintain healthy bones.',
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          fontFamily: 'Inter',
+                          color: FlutterFlowTheme.of(context).primaryText,
+                          fontSize: 14,
+                          fontWeight: FontWeight.normal,
+                        ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(16, 16, 8, 16),
+                  child: Text(
+                    'Consult a Dietitian',
+                    style: FlutterFlowTheme.of(context).titleMedium.override(
+                          fontFamily: 'Inter',
+                          color: Color(0xFF101518),
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                        ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(10, 16, 10, 16),
+                  child: Text(
+                    'Consider consulting a dietitian to ensure your vegetarian diet meets all your nutritional needs for bone health.',
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          fontFamily: 'Inter',
+                          color: FlutterFlowTheme.of(context).primaryText,
+                          fontSize: 14,
+                          fontWeight: FontWeight.normal,
+                        ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
