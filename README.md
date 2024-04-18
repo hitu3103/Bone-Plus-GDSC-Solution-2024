@@ -1,4 +1,4 @@
-# Bone-Plus-GDSC-Solution-2024
+# Bone-Plus-Hackspiration'24
 Please click on this link to view my project in flutterflow
 
 https://app.flutterflow.io/share/bone-6hmbyh
